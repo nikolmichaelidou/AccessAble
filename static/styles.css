@@ -118,7 +118,7 @@ a {
   text-decoration: underline;
   transition: color 0.2s, background 0.2s;
 }
-a:hover, a:focus {
+a:hover, a:focus:not(:focus-visible) {
   color: #003e8a;
   background: #e9f3ff;
   outline: none;
