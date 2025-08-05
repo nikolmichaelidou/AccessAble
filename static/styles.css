@@ -172,6 +172,10 @@ footer p {
 }
 
 /* Accessibility: High contrast for focus */
+a:focus, button:focus {
+  outline: 3px solid #ffd700;
+  outline-offset: 2px;
+}
 a:focus-visible, button:focus-visible {
   outline: 3px solid #ffd700;
   outline-offset: 2px;
