@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A curated list of web accessibility tools to help create inclusive websites.">
-    <title>Web Accessibility Tools</title>
+    <title>Web Accessibility Tools | AccessAble</title>
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     <link rel="stylesheet" href="static/styles.css">
+    <meta name="theme-color" content="#22223b">
+    <meta name="color-scheme" content="light dark">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -14,10 +17,10 @@
         <h1>Web Accessibility Tools</h1>
         <nav aria-label="Main navigation">
             <ul>
-                <li><a href="homepage.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="web-accessibility-tools.html" aria-current="page">Tools</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#about" aria-label="About section">About</a></li>
+                <li><a href="#contact" aria-label="Contact section">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -26,22 +29,22 @@
             <h2 id="tools-title">Featured Accessibility Tools</h2>
             <ul class="tools-list">
                 <li>
-                    <strong><a href="https://wave.webaim.org/" target="_blank" rel="noopener">WAVE</a></strong>: Analyze web pages for accessibility issues and get suggestions for improvement.
+                    <strong><a href="https://wave.webaim.org/" target="_blank" rel="noopener" aria-label="WAVE Web Accessibility Evaluation Tool – Analyze web pages for accessibility issues and get suggestions for improvement">WAVE</a></strong>: Analyze web pages for accessibility issues and get suggestions for improvement.
                 </li>
                 <li>
-                    <strong><a href="https://www.accessibilitychecker.org/" target="_blank" rel="noopener">Accessibility Checker</a></strong>: Free online tool to check your website's accessibility.
+                    <strong><a href="https://www.accessibilitychecker.org/" target="_blank" rel="noopener" aria-label="Accessibility Checker – Free online tool to check your website's accessibility">Accessibility Checker</a></strong>: Free online tool to check your website's accessibility.
                 </li>
                 <li>
-                    <strong><a href="https://axe.devtools/" target="_blank" rel="noopener">axe DevTools</a></strong>: Browser extension for automated accessibility testing.
+                    <strong><a href="https://axe.devtools/" target="_blank" rel="noopener" aria-label="axe DevTools – Browser extension for automated accessibility testing">axe DevTools</a></strong>: Browser extension for automated accessibility testing.
                 </li>
                 <li>
-                    <strong><a href="https://www.ssa.gov/accessibility/andi/help/install.html" target="_blank" rel="noopener">ANDI</a></strong>: Accessibility testing tool by the Social Security Administration.
+                    <strong><a href="https://www.ssa.gov/accessibility/andi/help/install.html" target="_blank" rel="noopener" aria-label="ANDI – Accessibility testing tool by the Social Security Administration">ANDI</a></strong>: Accessibility testing tool by the Social Security Administration.
                 </li>
                 <li>
-                    <strong><a href="https://color.a11y.com/Contrast/" target="_blank" rel="noopener">Color Contrast Analyzer</a></strong>: Check color contrast for text and UI elements.
+                    <strong><a href="https://color.a11y.com/Contrast/" target="_blank" rel="noopener" aria-label="Color Contrast Analyzer – Check color contrast for text and UI elements">Color Contrast Analyzer</a></strong>: Check color contrast for text and UI elements.
                 </li>
                 <li>
-                    <strong><a href="https://www.screenreader.com/" target="_blank" rel="noopener">Screen Reader Demo</a></strong>: Experience how screen readers interpret your site.
+                    <strong><a href="https://www.screenreader.com/" target="_blank" rel="noopener" aria-label="Screen Reader Demo – Experience how screen readers interpret your site">Screen Reader Demo</a></strong>: Experience how screen readers interpret your site.
                 </li>
             </ul>
         </section>
@@ -75,8 +78,8 @@
     <footer role="contentinfo">
         <p>&copy; <span id="year"></span> AccessAble | <a href="mailto:info@ourwebsite.com">Contact Us</a></p>
         <ul class="social-links">
-            <li><a href="https://twitter.com/" aria-label="Twitter" target="_blank" rel="noopener">Twitter</a></li>
-            <li><a href="https://facebook.com/" aria-label="Facebook" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://twitter.com/" aria-label="Twitter (opens in new tab)" target="_blank" rel="noopener">Twitter</a></li>
+            <li><a href="https://facebook.com/" aria-label="Facebook (opens in new tab)" target="_blank" rel="noopener">Facebook</a></li>
         </ul>
         <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
