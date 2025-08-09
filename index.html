@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AccessAble: Showcasing accessibility tools and resources for a more inclusive web.">
+    <title>Homepage</title>
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>AccessAble: Inclusive Web Tools</h1>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="homepage.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content" tabindex="-1" role="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <div>
+                <h2 id="hero-title">Empowering Accessible Web Experiences</h2>
+                <p>
+                    AccessAble is dedicated to showcasing accessibility tools and resources for a more inclusive web. Our mission is to help everyone, including people with disabilities, access and enjoy the digital world.
+                </p>
+                <a href="#resources" class="cta">Explore Accessibility Resources</a>
+            </div>
+        </section>
+        <section aria-labelledby="web-accessibility-title">
+            <h2 id="web-accessibility-title">What is Web Accessibility?</h2>
+            <p>
+                Web accessibility means designing and developing websites, tools, and technologies so that people with disabilities can use them. This includes making sure everyone can perceive, understand, navigate, and interact with the web.
+            </p>
+        </section>
+        <aside id="resources" aria-label="Accessibility Resources">
+            <h2>Accessibility Resources</h2>
+            <ul>
+                <li><a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">W3C Web Accessibility Initiative (WAI)</a> – Official standards and guidelines for web accessibility.</li>
+                <li><a href="https://webaim.org/" target="_blank" rel="noopener">WebAIM</a> – Practical accessibility articles, tools, and training.</li>
+                <li><a href="https://www.a11yproject.com/" target="_blank" rel="noopener">The A11Y Project</a> – Community-driven accessibility resources and checklists.</li>
+                <li><a href="https://wave.webaim.org/" target="_blank" rel="noopener">WAVE Web Accessibility Evaluation Tool</a> – Analyze your site for accessibility issues.</li>
+                <li><a href="https://www.accessibilitychecker.org/" target="_blank" rel="noopener">Accessibility Checker</a> – Free online accessibility checker for websites.</li>
+            </ul>
+        </aside>
+    </main>
+    <footer role="contentinfo">
+        <p>&copy; <span id="year"></span> AccessAble | <a href="mailto:info@ourwebsite.com">Contact Us</a></p>
+        <ul class="social-links">
+            <li><a href="https://twitter.com/" aria-label="Twitter" target="_blank" rel="noopener">Twitter</a></li>
+            <li><a href="https://facebook.com/" aria-label="Facebook" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+</body>
+</html>
