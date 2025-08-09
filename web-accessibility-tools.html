@@ -53,7 +53,7 @@
                 <div class="tool-preview" aria-label="WAVE Web Accessibility Evaluation Tool Preview">
                     <h3>WAVE Web Accessibility Evaluation Tool</h3>
                     <p class="tool-desc">Analyze web pages for accessibility issues and get suggestions for improvement.</p>
-                    <button onclick="window.open('https://wave.webaim.org/', '_blank')" class="open-tool-btn">Open in New Tab</button>
+                    <button id="open-wave-tool" class="open-tool-btn">Open in New Tab</button>
                     <div class="iframe-container">
                         <div class="iframe-loading" id="wave-loading">Loading preview...</div>
                         <iframe src="https://wave.webaim.org/" title="WAVE Web Accessibility Evaluation Tool Preview" width="100%" height="400" style="border:1px solid #ccc;" onload="document.getElementById('wave-loading').style.display='none';"></iframe>
