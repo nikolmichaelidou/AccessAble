@@ -1,3 +1,9 @@
+/* Ensure visible focus for keyboard navigation */
+a:focus, button:focus, .cta:focus, .skip-link:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+  background: #e6f0ff;
+}
 /* Homepage-specific styles */
 .skip-link {
     position: absolute;
