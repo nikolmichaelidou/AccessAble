@@ -1,3 +1,62 @@
+/* Tool preview enhancements */
+.tool-previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.tool-preview {
+  flex: 1 1 350px;
+  min-width: 320px;
+  background: #fafbfc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+.tool-preview:focus-within, .tool-preview:hover {
+  box-shadow: 0 4px 16px rgba(0,95,204,0.12);
+  outline: 2px solid #005fcc;
+}
+.tool-desc {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.open-tool-btn {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.4em 1em;
+  background: #005fcc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+.open-tool-btn:hover, .open-tool-btn:focus {
+  background: #003e8a;
+}
+.iframe-container {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+}
+.iframe-loading {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.8);
+  color: #005fcc;
+  font-weight: bold;
+  z-index: 2;
+  border-radius: 8px;
+}
 /* Base styles */
 html {
   box-sizing: border-box;

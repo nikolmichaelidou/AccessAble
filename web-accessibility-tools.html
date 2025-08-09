@@ -45,6 +45,32 @@
                 </li>
             </ul>
         </section>
+
+        <section aria-labelledby="preview-title">
+            <h2 id="preview-title">Preview Accessibility Tools</h2>
+            <p>Interact with some of the featured tools directly below (where available):</p>
+            <div class="tool-previews" aria-label="Accessibility tool previews">
+                <div class="tool-preview" aria-label="WAVE Web Accessibility Evaluation Tool Preview">
+                    <h3>WAVE Web Accessibility Evaluation Tool</h3>
+                    <p class="tool-desc">Analyze web pages for accessibility issues and get suggestions for improvement.</p>
+                    <button onclick="window.open('https://wave.webaim.org/', '_blank')" class="open-tool-btn">Open in New Tab</button>
+                    <div class="iframe-container">
+                        <div class="iframe-loading" id="wave-loading">Loading preview...</div>
+                        <iframe src="https://wave.webaim.org/" title="WAVE Web Accessibility Evaluation Tool Preview" width="100%" height="400" style="border:1px solid #ccc;" onload="document.getElementById('wave-loading').style.display='none';"></iframe>
+                    </div>
+                </div>
+                <div class="tool-preview" aria-label="Accessibility Checker Preview">
+                    <h3>Accessibility Checker</h3>
+                    <p class="tool-desc">Free online tool to check your website's accessibility.</p>
+                    <button onclick="window.open('https://www.accessibilitychecker.org/', '_blank')" class="open-tool-btn">Open in New Tab</button>
+                    <div class="iframe-container">
+                        <div class="iframe-loading" id="checker-loading">Loading preview...</div>
+                        <iframe src="https://www.accessibilitychecker.org/" title="Accessibility Checker Preview" width="100%" height="400" style="border:1px solid #ccc;" onload="document.getElementById('checker-loading').style.display='none';"></iframe>
+                    </div>
+                </div>
+                <p style="font-size:0.9em; color:#555;">Note: Some tools may restrict embedding or require you to open them in a new tab for full functionality.</p>
+            </div>
+        </section>
     </main>
     <footer role="contentinfo">
         <p>&copy; <span id="year"></span> AccessAble | <a href="mailto:info@ourwebsite.com">Contact Us</a></p>
