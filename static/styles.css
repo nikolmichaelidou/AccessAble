@@ -30,6 +30,19 @@ body {
   line-height: 1.6;
 }
 
+/* Visually hidden utility for a11y-only text */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 header[role="banner"] {
   background: var(--header-bg);
   color: var(--header-text);
@@ -126,6 +139,53 @@ section.hero {
   background: var(--accent-dark);
   color: #fff;
   outline: 2px solid var(--focus);
+}
+
+/* Tool cards and actions */
+.tool-actions {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.5rem;
+  align-items: end;
+  margin: 1rem 0 1.5rem 0;
+}
+.tool-actions label { grid-column: 1 / -1; }
+.open-tool-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.6em 1em;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+.open-tool-btn:focus,
+.open-tool-btn:hover {
+  background: var(--accent-dark);
+  outline: 2px solid var(--focus);
+}
+
+.tool-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.tool-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(34,34,59,0.05);
+}
+.badges { margin: 0.5rem 0; }
+.badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  background: #eef2ff;
+  color: #1a237e;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  margin-right: 0.4rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -225,6 +285,9 @@ footer a:hover {
   nav[aria-label] ul {
     flex-direction: column;
     gap: 1rem;
+  }
+  .tool-actions {
+    grid-template-columns: 1fr;
   }
 }
 

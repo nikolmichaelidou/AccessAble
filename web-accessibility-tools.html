@@ -15,38 +15,83 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header role="banner">
         <h1>Web Accessibility Tools</h1>
-        <nav aria-label="Main navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="web-accessibility-tools.html" aria-current="page">Tools</a></li>
-                <li><a href="#about" aria-label="About section">About</a></li>
-                <li><a href="#contact" aria-label="Contact section">Contact</a></li>
-            </ul>
-        </nav>
+		<nav aria-label="Main navigation" role="navigation">
+			<ul>
+				<li><a href="index.html">Index</a></li>
+				<li><a href="web-accessibility-tools.html" aria-current="page">Web Accessibility Tools</a></li>
+			</ul>
+		</nav>
     </header>
     <main id="main-content" tabindex="-1" role="main">
         <section aria-labelledby="tools-title">
             <h2 id="tools-title">Featured Accessibility Tools</h2>
-            <ul class="tools-list">
-                <li>
-                    <strong><a href="https://wave.webaim.org/" target="_blank" rel="noopener" aria-label="WAVE Web Accessibility Evaluation Tool – Analyze web pages for accessibility issues and get suggestions for improvement">WAVE</a></strong>: Analyze web pages for accessibility issues and get suggestions for improvement.
-                </li>
-                <li>
-                    <strong><a href="https://www.accessibilitychecker.org/" target="_blank" rel="noopener" aria-label="Accessibility Checker – Free online tool to check your website's accessibility">Accessibility Checker</a></strong>: Free online tool to check your website's accessibility.
-                </li>
-                <li>
-                    <strong><a href="https://axe.devtools/" target="_blank" rel="noopener" aria-label="axe DevTools – Browser extension for automated accessibility testing">axe DevTools</a></strong>: Browser extension for automated accessibility testing.
-                </li>
-                <li>
-                    <strong><a href="https://www.ssa.gov/accessibility/andi/help/install.html" target="_blank" rel="noopener" aria-label="ANDI – Accessibility testing tool by the Social Security Administration">ANDI</a></strong>: Accessibility testing tool by the Social Security Administration.
-                </li>
-                <li>
-                    <strong><a href="https://color.a11y.com/Contrast/" target="_blank" rel="noopener" aria-label="Color Contrast Analyzer – Check color contrast for text and UI elements">Color Contrast Analyzer</a></strong>: Check color contrast for text and UI elements.
-                </li>
-                <li>
-                    <strong><a href="https://www.screenreader.com/" target="_blank" rel="noopener" aria-label="Screen Reader Demo – Experience how screen readers interpret your site">Screen Reader Demo</a></strong>: Experience how screen readers interpret your site.
-                </li>
-            </ul>
+			<div class="tool-actions" aria-label="Test this page with tools">
+				<label for="test-url">URL to test</label>
+				<input id="test-url" type="url" inputmode="url" style="max-width: 520px; width: 100%;">
+				<button id="test-wave" class="open-tool-btn">Test with WAVE <span class="sr-only">(opens in new tab)</span></button>
+				<button id="test-ac" class="open-tool-btn">Test with Accessibility Checker <span class="sr-only">(opens in new tab)</span></button>
+			</div>
+
+			<section aria-labelledby="filter-title">
+				<h3 id="filter-title">Filter tools</h3>
+				<form id="tool-filter" aria-describedby="filter-hint">
+					<p id="filter-hint">Choose one or more filters. Results update automatically.</p>
+					<fieldset>
+						<legend class="sr-only">Tool filters</legend>
+						<label><input type="checkbox" name="tag" value="analyzer"> Analyzer</label>
+						<label><input type="checkbox" name="tag" value="extension"> Extension</label>
+						<label><input type="checkbox" name="tag" value="color"> Color</label>
+						<label><input type="checkbox" name="tag" value="web"> Web App</label>
+						<label><input type="checkbox" name="tag" value="free"> Free</label>
+					</fieldset>
+				</form>
+				<p id="results-count" role="status" aria-live="polite"></p>
+			</section>
+
+			<div class="tool-cards" role="list" aria-label="Accessibility tools">
+				<article class="tool-card" role="listitem" data-tags="analyzer web free">
+					<h3>WAVE Web Accessibility Evaluation Tool</h3>
+					<p>Analyze web pages for accessibility issues and get suggestions for improvement.</p>
+					<p class="badges"><span class="badge">Analyzer</span><span class="badge">Web</span><span class="badge">Free</span></p>
+					<p class="usage-note">Best for quick visual checks and summaries.</p>
+					<p><a href="https://wave.webaim.org/" target="_blank" rel="noopener">Open WAVE <span class="sr-only">(opens in new tab)</span></a></p>
+				</article>
+				<article class="tool-card" role="listitem" data-tags="analyzer web free">
+					<h3>Accessibility Checker</h3>
+					<p>Free online tool to check your website's accessibility.</p>
+					<p class="badges"><span class="badge">Analyzer</span><span class="badge">Web</span><span class="badge">Free</span></p>
+					<p class="usage-note">Enter a URL to generate a detailed report.</p>
+					<p><a href="https://www.accessibilitychecker.org/" target="_blank" rel="noopener">Open Accessibility Checker <span class="sr-only">(opens in new tab)</span></a></p>
+				</article>
+				<article class="tool-card" role="listitem" data-tags="analyzer extension">
+					<h3>axe DevTools</h3>
+					<p>Browser extension for automated accessibility testing.</p>
+					<p class="badges"><span class="badge">Analyzer</span><span class="badge">Extension</span></p>
+					<p class="usage-note">Run directly in your browser's devtools panel.</p>
+					<p><a href="https://axe.devtools/" target="_blank" rel="noopener">Open axe DevTools <span class="sr-only">(opens in new tab)</span></a></p>
+				</article>
+				<article class="tool-card" role="listitem" data-tags="analyzer web free">
+					<h3>ANDI</h3>
+					<p>Accessibility testing tool by the Social Security Administration.</p>
+					<p class="badges"><span class="badge">Analyzer</span><span class="badge">Web</span><span class="badge">Free</span></p>
+					<p class="usage-note">Bookmarklet-based; injects a helper into the current page.</p>
+					<p><a href="https://www.ssa.gov/accessibility/andi/help/install.html" target="_blank" rel="noopener">Open ANDI <span class="sr-only">(opens in new tab)</span></a></p>
+				</article>
+				<article class="tool-card" role="listitem" data-tags="color web free">
+					<h3>Color Contrast Analyzer</h3>
+					<p>Check color contrast for text and UI elements.</p>
+					<p class="badges"><span class="badge">Color</span><span class="badge">Web</span><span class="badge">Free</span></p>
+					<p class="usage-note">Enter foreground/background colors or sample from your palette.</p>
+					<p><a href="https://color.a11y.com/Contrast/" target="_blank" rel="noopener">Open Contrast Checker <span class="sr-only">(opens in new tab)</span></a></p>
+				</article>
+				<article class="tool-card" role="listitem" data-tags="web free">
+					<h3>Screen Reader Demo</h3>
+					<p>Experience how screen readers interpret your site.</p>
+					<p class="badges"><span class="badge">Web</span><span class="badge">Free</span></p>
+					<p class="usage-note">Great for quick exposure to screen reader output.</p>
+					<p><a href="https://www.screenreader.com/" target="_blank" rel="noopener">Open Screen Reader Demo <span class="sr-only">(opens in new tab)</span></a></p>
+				</article>
+			</div>
         </section>
 
         <section aria-labelledby="preview-title">
@@ -56,24 +101,97 @@
                 <div class="tool-preview" aria-label="WAVE Web Accessibility Evaluation Tool Preview">
                     <h3>WAVE Web Accessibility Evaluation Tool</h3>
                     <p class="tool-desc">Analyze web pages for accessibility issues and get suggestions for improvement.</p>
-                    <button id="open-wave-tool" class="open-tool-btn">Open in New Tab</button>
-                    <div class="iframe-container">
-                        <div class="iframe-loading" id="wave-loading">Loading preview...</div>
-                        <iframe src="https://wave.webaim.org/" title="WAVE Web Accessibility Evaluation Tool Preview" width="100%" height="400" style="border:1px solid #ccc;" onload="document.getElementById('wave-loading').style.display='none';"></iframe>
-                    </div>
+					<button id="open-wave-tool" class="open-tool-btn">Open in New Tab <span class="sr-only">(opens in new tab)</span></button>
+					<div class="iframe-container">
+						<div class="iframe-loading" id="wave-loading" role="status" aria-live="polite">Loading preview...</div>
+						<iframe src="https://wave.webaim.org/" title="WAVE Web Accessibility Evaluation Tool Preview" width="100%" height="400" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin" style="border:1px solid #ccc;" onload="document.getElementById('wave-loading').style.display='none';" onerror="this.replaceWith(Object.assign(document.createElement('p'),{textContent:'Preview unavailable. Use the button to open in a new tab.'}));"></iframe>
+					</div>
                 </div>
                 <div class="tool-preview" aria-label="Accessibility Checker Preview">
                     <h3>Accessibility Checker</h3>
                     <p class="tool-desc">Free online tool to check your website's accessibility.</p>
-                    <button onclick="window.open('https://www.accessibilitychecker.org/', '_blank')" class="open-tool-btn">Open in New Tab</button>
-                    <div class="iframe-container">
-                        <div class="iframe-loading" id="checker-loading">Loading preview...</div>
-                        <iframe src="https://www.accessibilitychecker.org/" title="Accessibility Checker Preview" width="100%" height="400" style="border:1px solid #ccc;" onload="document.getElementById('checker-loading').style.display='none';"></iframe>
-                    </div>
+					<button id="open-ac-tool" class="open-tool-btn">Open in New Tab <span class="sr-only">(opens in new tab)</span></button>
+					<div class="iframe-container">
+						<div class="iframe-loading" id="checker-loading" role="status" aria-live="polite">Loading preview...</div>
+						<iframe src="https://www.accessibilitychecker.org/" title="Accessibility Checker Preview" width="100%" height="400" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin" style="border:1px solid #ccc;" onload="document.getElementById('checker-loading').style.display='none';" onerror="this.replaceWith(Object.assign(document.createElement('p'),{textContent:'Preview unavailable. Use the button to open in a new tab.'}));"></iframe>
+					</div>
                 </div>
                 <p style="font-size:0.9em; color:#555;">Note: Some tools may restrict embedding or require you to open them in a new tab for full functionality.</p>
             </div>
         </section>
+
+		<script>
+		(function () {
+			function openInNewTab(url) {
+				window.open(url, '_blank', 'noopener');
+			}
+
+			var urlInput = document.getElementById('test-url');
+			if (urlInput) {
+				urlInput.value = window.location.href;
+			}
+
+			var testWave = document.getElementById('test-wave');
+			if (testWave) {
+				testWave.addEventListener('click', function () {
+					var url = urlInput && urlInput.value ? urlInput.value : window.location.href;
+					openInNewTab('https://wave.webaim.org/report#/' + encodeURIComponent(url));
+				});
+			}
+
+			var testAc = document.getElementById('test-ac');
+			if (testAc) {
+				testAc.addEventListener('click', function () {
+					var url = urlInput && urlInput.value ? urlInput.value : window.location.href;
+					openInNewTab('https://www.accessibilitychecker.org/?url=' + encodeURIComponent(url));
+				});
+			}
+
+			var waveBtn = document.getElementById('open-wave-tool');
+			if (waveBtn) {
+				waveBtn.addEventListener('click', function () {
+					var url = urlInput && urlInput.value ? urlInput.value : window.location.href;
+					openInNewTab('https://wave.webaim.org/report#/' + encodeURIComponent(url));
+				});
+			}
+
+			var acBtn = document.getElementById('open-ac-tool');
+			if (acBtn) {
+				acBtn.addEventListener('click', function () {
+					var url = urlInput && urlInput.value ? urlInput.value : window.location.href;
+					openInNewTab('https://www.accessibilitychecker.org/?url=' + encodeURIComponent(url));
+				});
+			}
+
+			var filterForm = document.getElementById('tool-filter');
+			var resultsCount = document.getElementById('results-count');
+			var cards = Array.prototype.slice.call(document.querySelectorAll('.tool-card'));
+
+			function updateFilter() {
+				if (!filterForm) { return; }
+				var checked = Array.prototype.slice.call(filterForm.querySelectorAll('input[name="tag"]:checked')).map(function (c) { return c.value; });
+				var visibleCount = 0;
+				cards.forEach(function (card) {
+					var tags = (card.getAttribute('data-tags') || '').split(/\s+/);
+					var matches = checked.every(function (t) { return tags.indexOf(t) !== -1; });
+					if (checked.length === 0 || matches) {
+						card.style.display = '';
+						visibleCount++;
+					} else {
+						card.style.display = 'none';
+					}
+				});
+				if (resultsCount) {
+					resultsCount.textContent = visibleCount + ' tool' + (visibleCount === 1 ? '' : 's') + ' shown';
+				}
+			}
+
+			if (filterForm) {
+				filterForm.addEventListener('change', updateFilter);
+				updateFilter();
+			}
+		}());
+		</script>
     </main>
     <footer role="contentinfo">
         <p>&copy; <span id="year"></span> AccessAble | <a href="mailto:info@ourwebsite.com">Contact Us</a></p>
