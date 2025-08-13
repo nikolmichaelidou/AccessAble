@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="purple">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="static/styles.css">
 	<meta name="theme-color" content="#22223b">
 	<meta name="color-scheme" content="light dark">
+	<script>(function(){try{var t=localStorage.getItem('theme');if(t==='purple'){document.documentElement.setAttribute('data-theme','purple');}else{document.documentElement.removeAttribute('data-theme');}}catch(e){}})();</script>
 </head>
 <body>
 	<a href="#main-content" class="skip-link">Skip to main content</a>
@@ -22,6 +23,9 @@
         <li><a href="about.html" aria-current="page">About</a></li>
     </ul>
 </nav>
+		<div class="header-actions">
+			<button id="theme-toggle" class="theme-toggle" aria-pressed="true">Switch to default theme</button>
+		</div>
 	</header>
 	<main id="main-content" tabindex="-1" role="main">
 		<section aria-labelledby="about-title">
@@ -103,6 +107,9 @@
 			<li><a href="https://facebook.com/" target="_blank" rel="noopener">Facebook <span class="sr-only">(opens in new tab)</span></a></li>
 		</ul>
 		<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+		<script>(function(){function u(p){var b=document.getElementById('theme-toggle');if(!b)return;b.setAttribute('aria-pressed',p?'true':'false');b.textContent=p?'Switch to default theme':'Switch to purple theme';}
+var s=(localStorage.getItem('theme')|| (document.documentElement.getAttribute('data-theme')==='purple'?'purple':'default'));u(s==='purple');
+var b=document.getElementById('theme-toggle');if(b){b.addEventListener('click',function(){var isPurple=document.documentElement.getAttribute('data-theme')==='purple';if(isPurple){document.documentElement.removeAttribute('data-theme');localStorage.setItem('theme','default');u(false);}else{document.documentElement.setAttribute('data-theme','purple');localStorage.setItem('theme','purple');u(true);}});} })();</script>
 	</footer>
 </body>
 </html>
