@@ -2,6 +2,18 @@
 
 AccessAble is a project dedicated to showcasing current accessibility tools available for web users. Its goal is to raise awareness and provide resources for making the web more inclusive for everyone, including people with disabilities.
 
+## Project Structure
+
+```
+AccessAble/
+├── index.html              # Main landing page
+├── web-accessibility-tools.html  # Tools and resources page
+├── static/
+│   └── styles.css         # Accessible stylesheet
+├── generate_nav.py        # Navigation generator script
+└── README.md
+```
+
 ## What is Accessibility?
 
 Web accessibility refers to the practice of designing and developing websites, applications, and digital tools so that people with disabilities can perceive, understand, navigate, and interact with them effectively. This includes people with various disabilities such as:
@@ -39,13 +51,57 @@ The purpose of this project is to:
 - Resources for learning more about web accessibility
 - Semantic HTML structure with ARIA roles and skip links for improved accessibility
 - Responsive design and color contrast for better usability
+- Automatic navigation generation across pages
+- Dark mode support and color scheme preferences
+- High contrast mode support
+
+## Technical Features
+
+### Automated Navigation
+- Python script (`generate_nav.py`) automatically generates navigation menus
+- Detects all HTML pages in the project
+- Updates navigation with proper ARIA attributes
+- Maintains current page indicators
+
+### CSS Features
+- CSS Custom Properties (variables) for easy theming
+- Responsive design with mobile-first approach
+- High contrast mode support
+- Focus visible indicators
+- Smooth scrolling
+- Accessible color contrast ratios
+- Dark mode support
+
+### Testing
+
+The site has been tested with:
+- WAVE Web Accessibility Evaluation Tool
+- axe DevTools
+- Keyboard navigation
+- Various screen readers (NVDA, VoiceOver)
+- High contrast mode
+- Different viewport sizes
 
 ## Getting Started
 
-1. Clone this repository.
-2. Open `index.html` in your browser to explore the homepage and resources.
-3. Open `web-accessibility-tools.html` to view and interact with featured accessibility tools.
-4. All pages use semantic HTML, ARIA roles, skip navigation links, and are designed for keyboard and screen reader accessibility.
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/nikolmichaelidou/AccessAble.git
+   cd AccessAble
+   ```
+
+2. Update the navigation (optional):
+   ```bash
+   python3 generate_nav.py
+   ```
+   This will automatically update the navigation menu across all HTML pages.
+
+3. Start a local server:
+   ```bash
+   python3 -m http.server 8000
+   ```
+
+4. Open `http://localhost:8000` in your browser to explore the site.
 
 ## Accessibility Best Practices Used
 
@@ -59,7 +115,15 @@ The purpose of this project is to:
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request if you have suggestions or want to add new tools/resources.
+Contributions are welcome! Please:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Make your changes
+4. Run `python3 generate_nav.py` to update navigation if you've added pages
+5. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+6. Push to the branch (`git push origin feature/AmazingFeature`)
+7. Open a Pull Request
 
 ## License
 
