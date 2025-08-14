@@ -1,19 +1,41 @@
 /* Accessible, modern, and responsive CSS for AccessAble */
 
 :root {
-  --primary-bg: #f8f9fa;
-  --primary-text: #22223b;
-  --accent: #4f8cff;
-  --accent-dark: #1a237e;
-  --link: #0056b3;
-  --link-hover: #003366;
-  --focus: #ffb703;
-  --header-bg: #22223b;
-  --header-text: #fff;
-  --footer-bg: #22223b;
-  --footer-text: #fff;
+  --primary-bg: #f6f7fb;
+  --primary-text: #111827; /* slate-900 */
+  --accent: #6366f1; /* indigo-500 */
+  --accent-dark: #4f46e5; /* indigo-600 */
+  --link: #2563eb; /* blue-600 */
+  --link-hover: #1d4ed8; /* blue-700 */
+  --focus: #f59e0b; /* amber-500 */
+  --header-bg: #0f172a; /* slate-900 */
+  --header-text: #ffffff;
+  --footer-bg: #0f172a;
+  --footer-text: #ffffff;
+  --button-bg: var(--accent);
+  --button-bg-hover: var(--accent-dark);
+  --button-text: #ffffff;
   --border-radius: 6px;
   --transition: 0.2s;
+}
+
+/* Accessible purple theme (applied when html has data-theme="purple") */
+:root[data-theme="purple"] {
+  --primary-bg: #f5f3ff; /* violet-50 */
+  --primary-text: #111827; /* slate-900 */
+  --accent: #8b5cf6; /* violet-500 */
+  --accent-dark: #7c3aed; /* violet-600 */
+  --link: #6d28d9; /* violet-700 */
+  --link-hover: #5b21b6; /* violet-800 */
+  --focus: #f59e0b; /* strong amber focus for contrast */
+  --header-bg: #2e1065; /* violet-950 */
+  --header-text: #ffffff;
+  --footer-bg: #2e1065;
+  --footer-text: #ffffff;
+  /* Buttons use darker violets for WCAG AA contrast with white text */
+  --button-bg: #6d28d9; /* violet-700 */
+  --button-bg-hover: #5b21b6; /* violet-800 */
+  --button-text: #ffffff;
 }
 
 html {
@@ -30,11 +52,47 @@ body {
   line-height: 1.6;
 }
 
+/* Visually hidden utility for a11y-only text */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 header[role="banner"] {
   background: var(--header-bg);
   color: var(--header-text);
   padding: 1.5rem 0 1rem 0;
   text-align: center;
+}
+
+.header-actions {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.theme-toggle {
+	background: transparent;
+	color: var(--header-text);
+	border: 1px solid rgba(255,255,255,0.6);
+	padding: 0.35em 0.75em;
+	border-radius: var(--border-radius);
+	cursor: pointer;
+}
+
+.theme-toggle:focus,
+.theme-toggle:hover {
+	background: var(--focus);
+	color: var(--primary-text);
+	outline: 2px solid var(--focus);
 }
 
 header h1 {
@@ -126,6 +184,53 @@ section.hero {
   background: var(--accent-dark);
   color: #fff;
   outline: 2px solid var(--focus);
+}
+
+/* Tool cards and actions */
+.tool-actions {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.5rem;
+  align-items: end;
+  margin: 1rem 0 1.5rem 0;
+}
+.tool-actions label { grid-column: 1 / -1; }
+.open-tool-btn {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 0.6em 1em;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+.open-tool-btn:focus,
+.open-tool-btn:hover {
+  background: var(--button-bg-hover);
+  outline: 2px solid var(--focus);
+}
+
+.tool-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.tool-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(34,34,59,0.05);
+}
+.badges { margin: 0.5rem 0; }
+.badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  background: #eef2ff;
+  color: #1a237e;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  margin-right: 0.4rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -225,6 +330,74 @@ footer a:hover {
   nav[aria-label] ul {
     flex-direction: column;
     gap: 1rem;
+  }
+  .tool-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Modern dark theme overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-bg: #0b1220;
+    --primary-text: #e5e7eb; /* slate-200 */
+    --header-bg: #0b1220;
+    --footer-bg: #0b1220;
+    --accent: #8b9cf5; /* lighter indigo */
+    --accent-dark: #7286f3;
+    --link: #60a5fa; /* sky-400 */
+    --link-hover: #93c5fd; /* blue-300 */
+    --focus: #f59e0b; /* keep strong focus */
+    --button-bg: var(--accent-dark);
+    --button-bg-hover: var(--accent);
+    --button-text: #111827; /* dark text for lighter buttons in dark mode */
+  }
+
+  main[role="main"] {
+    background: #111827; /* slate-800 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .tool-card {
+    background: #0f172a; /* slate-900 */
+    border-color: #1f2937; /* slate-700 */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  }
+
+  .badge {
+    background: #1f2937; /* slate-700 */
+    color: #c7d2fe; /* indigo-200 */
+  }
+
+  iframe {
+    border-color: #374151; /* slate-600 */
+  }
+}
+
+/* Dark mode overrides for purple theme */
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="purple"] {
+    --primary-bg: #0f0a1f; /* deep purple */
+    --primary-text: #e5e7eb; /* slate-200 */
+    --header-bg: #0f0a1f; /* deep purple */
+    --footer-bg: #0f0a1f;
+    --accent: #a78bfa; /* violet-400 */
+    --accent-dark: #8b5cf6; /* violet-500 */
+    --link: #c4b5fd; /* violet-300 */
+    --link-hover: #ddd6fe; /* violet-200 */
+    /* Use violet-600 for strong contrast with white text */
+    --button-bg: #7c3aed; /* violet-600 */
+    --button-bg-hover: #6d28d9; /* violet-700 */
+    --button-text: #ffffff;
+  }
+
+  :root[data-theme="purple"] main[role="main"] {
+    background: #111827; /* slate-800 for readability */
+  }
+
+  :root[data-theme="purple"] .badge {
+    background: #1f2937;
+    color: #ddd6fe;
   }
 }
 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="purple">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="About AccessAble – an independent student project exploring web accessibility standards and showcasing current tools.">
+	<title>About | AccessAble</title>
+	<link rel="icon" type="image/x-icon" href="static/favicon.ico">
+	<link rel="stylesheet" href="static/styles.css">
+	<meta name="theme-color" content="#22223b">
+	<meta name="color-scheme" content="light dark">
+	<script>(function(){try{var t=localStorage.getItem('theme');if(t==='purple'){document.documentElement.setAttribute('data-theme','purple');}else{document.documentElement.removeAttribute('data-theme');}}catch(e){}})();</script>
+</head>
+<body>
+	<a href="#main-content" class="skip-link">Skip to main content</a>
+	<header role="banner">
+		<h1>About AccessAble</h1>
+		<nav aria-label="Main navigation" role="navigation">
+    <ul>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="web-accessibility-tools.html">Web Accessibility Tools</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+    </ul>
+</nav>
+		<div class="header-actions">
+			<button id="theme-toggle" class="theme-toggle" aria-pressed="true">Switch to default theme</button>
+		</div>
+	</header>
+	<main id="main-content" tabindex="-1" role="main">
+		<section aria-labelledby="about-title">
+			<h2 id="about-title">What is this project?</h2>
+			<p>
+				AccessAble is an independent project created by a web development student to explore current web accessibility standards and to showcase the tools available today for building inclusive experiences.
+			</p>
+		</section>
+
+		<section aria-labelledby="who-title">
+			<h2 id="who-title">Who am I?</h2>
+			<p>
+				I’m a web dev student learning how to apply accessibility best practices in real projects. This site is both a learning journal and a practical resource for others.
+			</p>
+		</section>
+
+		<section aria-labelledby="about-me-title">
+			<h2 id="about-me-title">About me</h2>
+			<p>
+				I’m a 26-year-old woman based in Cyprus, focused on improving my web development skills and building inclusive, accessible interfaces.
+			</p>
+			<p>
+				This website is a hands-on project to showcase my skills—especially in web accessibility—through semantic HTML, ARIA, keyboard-friendly interactions, and practical tooling.
+			</p>
+			<h3 id="skills-title">Skills</h3>
+			<ul>
+				<li>Semantic HTML and landmarks</li>
+				<li>Accessible forms and labels</li>
+				<li>ARIA basics (roles, properties, states)</li>
+				<li>Keyboard navigation and focus management</li>
+				<li>Color contrast and responsive design</li>
+				<li>Tooling: WAVE, axe DevTools, ANDI</li>
+			</ul>
+			<h3 id="learning-title">Current learning</h3>
+			<ul>
+				<li>WCAG 2.2 success criteria</li>
+				<li>Advanced ARIA patterns (menus, dialogs)</li>
+				<li>Screen reader testing (NVDA, VoiceOver)</li>
+				<li>Combining automated and manual audits</li>
+				<li>Design systems with baked-in accessibility</li>
+			</ul>
+		</section>
+
+		<section aria-labelledby="goals-title">
+			<h2 id="goals-title">Goals</h2>
+			<ul>
+				<li>Understand and apply core accessibility standards (WCAG, ARIA, semantic HTML).</li>
+				<li>Collect and compare helpful tools for auditing and improving accessibility.</li>
+				<li>Share concise, actionable resources for developers and content authors.</li>
+			</ul>
+		</section>
+
+		<section aria-labelledby="standards-title">
+			<h2 id="standards-title">Standards and references</h2>
+			<p>
+				Key references used while building this project include:
+			</p>
+			<ul>
+				<li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">WCAG (Web Content Accessibility Guidelines) <span class="sr-only">(opens in new tab)</span></a></li>
+				<li><a href="https://www.w3.org/TR/wai-aria-1.2/" target="_blank" rel="noopener">WAI-ARIA 1.2 <span class="sr-only">(opens in new tab)</span></a></li>
+				<li><a href="https://webaim.org/" target="_blank" rel="noopener">WebAIM articles and checklists <span class="sr-only">(opens in new tab)</span></a></li>
+			</ul>
+			<p>
+				This site aims for best practices but is a learning project, not an official standard or certification.
+			</p>
+		</section>
+
+		<section aria-labelledby="contact-title">
+			<h2 id="contact-title">Contact</h2>
+			<p>
+				Questions or suggestions? Reach out via <a href="mailto:info@ourwebsite.com">email</a>.
+			</p>
+		</section>
+	</main>
+	<footer role="contentinfo">
+		<p>&copy; <span id="year"></span> AccessAble | <a href="mailto:info@ourwebsite.com">Contact Us</a></p>
+		<ul class="social-links">
+			<li><a href="https://twitter.com/" target="_blank" rel="noopener">Twitter <span class="sr-only">(opens in new tab)</span></a></li>
+			<li><a href="https://facebook.com/" target="_blank" rel="noopener">Facebook <span class="sr-only">(opens in new tab)</span></a></li>
+		</ul>
+		<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+		<script>(function(){function u(p){var b=document.getElementById('theme-toggle');if(!b)return;b.setAttribute('aria-pressed',p?'true':'false');b.textContent=p?'Switch to default theme':'Switch to purple theme';}
+var s=(localStorage.getItem('theme')|| (document.documentElement.getAttribute('data-theme')==='purple'?'purple':'default'));u(s==='purple');
+var b=document.getElementById('theme-toggle');if(b){b.addEventListener('click',function(){var isPurple=document.documentElement.getAttribute('data-theme')==='purple';if(isPurple){document.documentElement.removeAttribute('data-theme');localStorage.setItem('theme','default');u(false);}else{document.documentElement.setAttribute('data-theme','purple');localStorage.setItem('theme','purple');u(true);}});} })();</script>
+	</footer>
+</body>
+</html>
