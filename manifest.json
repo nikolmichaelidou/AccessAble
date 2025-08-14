@@ -1,0 +1,16 @@
+{
+  "name": "AccessAble",
+  "short_name": "AccessAble",
+  "description": "Web accessibility tools and resources for inclusive web development",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#22223b",
+  "icons": [
+    {
+      "src": "/static/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}
